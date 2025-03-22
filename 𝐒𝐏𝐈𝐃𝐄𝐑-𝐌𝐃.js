@@ -601,7 +601,7 @@ case "advice":
 reply(advice());
 console.log(advice());
 
-break;
+break;j
 		      case "credits": 
   
               client.sendMessage(m.chat, { image: { url: 'https://i.imgur.com/Uf3hdzW.jpeg' }, caption: `We express sincere gratitude and acknowledgement to the following:\n\n -Dika Ardnt ➪ Indonesia\n - Writing the base code using case method\nhttps://github.com/DikaArdnt\n\n -Adiwajshing ➪ India\n - Writing and Coding the bot's library (baileys)\nhttps://github.com/WhiskeySockets/Baileys\n\n -WAWebSockets Discord Server community\n-Maintaining and reverse engineering the Web Sockets\nhttps://discord.gg/WeJM5FP9GG\n\n - Nick Hunter ➪ Kenya\n - Actively compiling and debugging parts of this bot script\nhttps://github.com/HunterNick2\n\n - Fortunatus Mokaya ➪ Kenya\n - Founder of the bot Base\nhttps://github.com/Fortunatusmokaya\n\n𝗥𝗔𝗩𝗘𝗡-𝗕𝗢𝗧`}); 
@@ -1794,42 +1794,7 @@ case "compile-py":
 
 if (!text && !m.quoted) throw 'Quote/tag a python code to compile.';
 
-const sourcecode = m.quoted ? m.quoted.text ? m.quoted.text : text ? text : m.text : m.text
-
-let resultPromise = python.runSource(sourcecode);
-resultPromise
-    .then(resultt => {
-        console.log(resultt);
-
-reply(resultt.stdout);
-reply(resultt.stderr);
-    })
-    .catch(err => {
-        console.log(resultt.stderr);
-reply(resultt.stderr)
-    });
-
-break;
-		      case 'save': {
-  const textL = m.text.toLowerCase();
-  const quotedMessage = m.msg?.contextInfo?.quotedMessage;
-
-if (quotedMessage && textL.startsWith(prefix + "save") && !m.quoted.chat.includes("status@broadcast")) {
-    return m.reply("You did not tag a status media to save.");
-  }
-
-if (Owner && quotedMessage && textL.startsWith(prefix + "save") && m.quoted.chat.includes("status@broadcast")) {
-    
-    if (quotedMessage.imageMessage) {
-      let imageCaption = quotedMessage.imageMessage.caption;
-      let imageUrl = await client.downloadAndSaveMediaMessage(quotedMessage.imageMessage);
-      client.sendMessage(m.chat, { image: { url: imageUrl }, caption: imageCaption });
-    }
-
-    if (quotedMessage.videoMessage) {
-      let videoCaption = quotedMessage.videoMessage.caption;
-      let videoUrl = await client.downloadAndSaveMediaMessage(quotedMessage.videoMessage);
-      client.sendMessage(m.chat, { video: { url: videoUrl }, caption: videoCaption });
+const sourcecode = m.quoted ? m.quoted.text ? m.quoted.text : text ? 
     }
      }
       }
